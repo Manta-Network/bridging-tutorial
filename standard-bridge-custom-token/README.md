@@ -1,7 +1,4 @@
-# Bridging your Custom ERC20 token to OP Mainnet using the Standard Bridge
-
-[![Discord](https://img.shields.io/discord/667044843901681675.svg?color=768AD4&label=discord&logo=https%3A%2F%2Fdiscordapp.com%2Fassets%2F8c9701b98ad4372b58f13fd9f65f966e.svg)](https://discord-gateway.optimism.io)
-[![Twitter Follow](https://img.shields.io/twitter/follow/optimismFND.svg?label=optimismFND&style=social)](https://twitter.com/optimismFND)
+# Bridging your Custom ERC20 token using the Standard Bridge
 
 
 For an L1/L2 token pair to work on the Standard Bridge, there has to be a layer of original mint (where the minting and burning of tokens is controlled by the business logic), and a bridged layer where the Standard Bridge controls minting and burning.
@@ -20,7 +17,7 @@ It is also necessary that the ERC-20 token contract on the layer of original min
 
 Our example here implements a custom token [`L2CustomERC20`](contracts/L2CustomERC20.sol) based on the `L2StandardERC20` but with `8` decimal points, rather than `18`.
 
-For the purpose we import the `L2StandardERC20` from the `@eth-optimism/contracts` package. This standard token implementation is based on the OpenZeppelin ERC20 contract and implements the required `IL2StandardERC20` interface.
+For the purpose we import the `L2StandardERC20` from the `@constellation-labs/contracts-bedrock` package. This standard token implementation is based on the OpenZeppelin ERC20 contract and implements the required `IL2StandardERC20` interface.
 
 ```
 import { L2StandardERC20 } from "@eth-optimism/contracts/standards/L2StandardERC20.sol";
@@ -44,14 +41,15 @@ Then the only thing we need to do is call the internal `_setupDecimals(8)` metho
 
 1. Edit `.env` to set the deployment parameters:
 
-   - `MNEMONIC`, the mnemonic for an account that has enough ETH for the deployment.
-   - `L1_ALCHEMY_KEY`, the key for the alchemy application for a Goerli endpoint.   
-   - `L2_ALCHEMY_KEY`, the key for the alchemy application for an OP Goerli endpoint.
+   - `PRIVATE_KEY`, the mnemonic for an account that has enough ETH for the deployment.
+   - `L1_RPC_URL`, the key for the alchemy application for a Goerli endpoint.   
+   - `L2_RPC_URL`, the key for the alchemy application for an OP Goerli endpoint.
    - `L1_TOKEN_ADDRESS`, the address of the L1 ERC20 which you want to bridge.
      The default value, [`0x32B3b2281717dA83463414af4E8CfB1970E56287`](https://goerli.etherscan.io/address/0x32B3b2281717dA83463414af4E8CfB1970E56287) is a test ERC-20 contract on Goerli that lets you call `faucet` to give yourself test tokens.
 
 1. Open the hardhat console.
-   # For mainnet, replace with manta-mainnet
+   For mainnet, replace the network with manta-mainnet.
+
    ```sh
    yarn hardhat console --network manta-testnet
    ```
@@ -110,7 +108,7 @@ Chains that aren't officially supported just take a few extra steps.
 Get the L1 contract addresses, and [provide them to the SDK](https://stack.optimism.io/docs/build/sdk/#contract-addresses).
 Once you do that, you can use the SDK normally.
 
-1. Import the Optimism SDK.
+1. Import the SDK.
 
    ```js
    const sdk = require("@constellation-labs/bedrock-sdk")
@@ -138,8 +136,8 @@ Once you do that, you can use the SDK normally.
       },
       l1SignerOrProvider: l1Wallet,
       l2SignerOrProvider: l2Wallet,
-      l1ChainId: 1,
-      l2ChainId: 169,
+      l1ChainId: l1ChainId,
+      l2ChainId: l2ChainId,
       bedrock: true,
    })
    ```
