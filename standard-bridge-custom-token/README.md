@@ -41,9 +41,9 @@ Then the only thing we need to do is call the internal `_setupDecimals(8)` metho
 
 1. Edit `.env` to set the deployment parameters:
 
-   - `PRIVATE_KEY`, the mnemonic for an account that has enough ETH for the deployment.
-   - `L1_RPC_URL`, the key for the alchemy application for a Goerli endpoint.   
-   - `L2_RPC_URL`, the key for the alchemy application for an OP Goerli endpoint.
+   - `PRIVATE_KEY`, the private key for an account that has enough ETH for the deployment.
+   - `L1_RPC_URL`, the key for the alchemy application for a Goerli endpoint. Should be changed to a mainnet Ethereum RPC url for Manta mainnet.
+   - `L2_RPC_URL`, the key for the alchemy application for the Manta endpoint. Should be changed from the default aalue for mainnet.
    - `L1_TOKEN_ADDRESS`, the address of the L1 ERC20 which you want to bridge.
      The default value, [`0x32B3b2281717dA83463414af4E8CfB1970E56287`](https://goerli.etherscan.io/address/0x32B3b2281717dA83463414af4E8CfB1970E56287) is a test ERC-20 contract on Goerli that lets you call `faucet` to give yourself test tokens.
 
