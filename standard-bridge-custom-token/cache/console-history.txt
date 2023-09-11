@@ -1,0 +1,39 @@
+   const optimismSDK = require("@constellation-labs/bedrock-sdk")
+   await l1Contract.balanceOf(l1Wallet.address)
+   rcpt = await tx.wait()
+   tx = await l1Contract.faucet()
+   l1Contract = new ethers.Contract(process.env.L1_TOKEN_ADDRESS, l1Factory.interface, l1Wallet)
+   l1Factory = await ethers.getContractFactory("OptimismUselessToken")
+   l1Wallet = new ethers.Wallet(privateKey, l1RpcProvider)
+   privateKey = process.env.PRIVATE_KEY
+   l1RpcProvider = new ethers.providers.JsonRpcProvider(l1Url)
+   l1Url = process.env.L1_RPC_URL
+   l2Addr = l2CustomERC20.address
+   l1Addr = process.env.L1_TOKEN_ADDRESS
+      process.env.L1_TOKEN_ADDRESS)
+      "0x4200000000000000000000000000000000000010",
+   l2CustomERC20 = await l2CustomERC20Factory.deploy(
+   l2CustomERC20Factory = await ethers.getContractFactory("L2CustomERC20")   
+l1Url = process.env.L1_RPC_URL
+env
+cat process.env
+echo process.env
+l1Url = process.env.L1_RPC_URL
+   await l1Contract.balanceOf(l1Wallet.address)
+   rcpt = await tx.wait()
+   tx = await l1Contract.faucet()
+   l1Contract = new ethers.Contract(process.env.L1_TOKEN_ADDRESS, l1Factory.interface, l1Wallet)
+l1Factory = await ethers.getContractFactory("OptimismUselessToken")
+   l1Wallet = new ethers.Wallet(privateKey, l1RpcProvider)
+   privateKey = process.env.PRIVATE_KEY
+   l1RpcProvider = new ethers.providers.JsonRpcProvider(l1Url)
+l1Url = process.env.L1_RPC_URL
+   l2Addr = l2CustomERC20.address
+   l1Addr = process.env.L1_TOKEN_ADDRESS
+      process.env.L1_TOKEN_ADDRESS)
+      "0x4200000000000000000000000000000000000010",
+   l2CustomERC20 = await l2CustomERC20Factory.deploy(
+      process.env.L1_TOKEN_ADDRESS)
+      "0x4200000000000000000000000000000000000010",
+   l2CustomERC20 = await l2CustomERC20Factory.deploy(
+   l2CustomERC20Factory = await ethers.getContractFactory("L2CustomERC20")   

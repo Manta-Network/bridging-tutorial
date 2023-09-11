@@ -53,7 +53,7 @@ Then the only thing we need to do is call the internal `_setupDecimals(8)` metho
 1. Open the hardhat console.
 
    ```sh
-   yarn hardhat console --network optimism-goerli
+   yarn hardhat console --network manta-testnet
    ```
 
 1. Deploy the contract.
@@ -79,10 +79,9 @@ Then the only thing we need to do is call the internal `_setupDecimals(8)` metho
 1. Get the L1 wallet.
 
    ```js
-   l1Url = `https://eth-goerli.g.alchemy.com/v2/${process.env.L1_ALCHEMY_KEY}`
+   l1Url = process.env.L1_RPC_URL
    l1RpcProvider = new ethers.providers.JsonRpcProvider(l1Url)
-   hdNode = ethers.utils.HDNode.fromMnemonic(process.env.MNEMONIC)
-   privateKey = hdNode.derivePath(ethers.utils.defaultPath).privateKey
+   privateKey = process.env.PRIVATE_KEY
    l1Wallet = new ethers.Wallet(privateKey, l1RpcProvider)
    ```
 
@@ -114,7 +113,7 @@ Once you do that, you can use the SDK normally.
 1. Import the Optimism SDK.
 
    ```js
-   const optimismSDK = require("@eth-optimism/sdk")
+   const optimismSDK = require("@constellation-labs/bedrock-sdk")
    ```
 
 1. Create the cross domain messenger.
