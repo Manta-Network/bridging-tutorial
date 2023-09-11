@@ -51,7 +51,7 @@ Then the only thing we need to do is call the internal `_setupDecimals(8)` metho
      The default value, [`0x32B3b2281717dA83463414af4E8CfB1970E56287`](https://goerli.etherscan.io/address/0x32B3b2281717dA83463414af4E8CfB1970E56287) is a test ERC-20 contract on Goerli that lets you call `faucet` to give yourself test tokens.
 
 1. Open the hardhat console.
-
+   # For mainnet, replace with manta-mainnet
    ```sh
    yarn hardhat console --network manta-testnet
    ```
@@ -113,7 +113,7 @@ Once you do that, you can use the SDK normally.
 1. Import the Optimism SDK.
 
    ```js
-   const optimismSDK = require("@constellation-labs/bedrock-sdk")
+   const sdk = require("@constellation-labs/bedrock-sdk")
    ```
 
 1. Create the cross domain messenger.
@@ -122,12 +122,39 @@ Once you do that, you can use the SDK normally.
    l1ChainId = (await l1RpcProvider.getNetwork()).chainId
    l2ChainId = (await ethers.provider.getNetwork()).chainId
    l2Wallet = await ethers.provider.getSigner()
-   crossChainMessenger = new optimismSDK.CrossChainMessenger({
-      l1ChainId: l1ChainId,
-      l2ChainId: l2ChainId,
+   
+   messenger = new sdk.CrossChainMessenger({
+      contracts: {
+         l1: {
+         StateCommitmentChain: "0x0000000000000000000000000000000000000000",
+         BondManager: "0x0000000000000000000000000000000000000000",
+         CanonicalTransactionChain: "0x0000000000000000000000000000000000000000",
+         AddressManager: "0x0AaeDFF2961D05021832cA093cf9409eDF5ECa8C",
+         L1CrossDomainMessenger: "0x7Ad11bB9216BC9Dc4CBd488D7618CbFD433d1E75",
+         L1StandardBridge: "0x4638aC6b5727a8b9586D3eba5B44Be4b74ED41Fc",
+         OptimismPortal: "0x7FD7eEA37c53ABf356cc80e71144D62CD8aF27d3",
+         L2OutputOracle: "0x8553D4d201ef97F2b76A28F5E543701b25e55B1b"
+         }
+      },
       l1SignerOrProvider: l1Wallet,
       l2SignerOrProvider: l2Wallet,
+      l1ChainId: 1,
+      l2ChainId: 169,
+      bedrock: true,
    })
+   ```
+   ```
+   For manta Mainnet, replace the ['contracts']['l1'] block with values for mainnet:
+   {
+      StateCommitmentChain: "0x0000000000000000000000000000000000000000",
+      BondManager: "0x0000000000000000000000000000000000000000",
+      CanonicalTransactionChain: "0x0000000000000000000000000000000000000000",
+      AddressManager: "0x3Ad319BB4872F8cB75a26Ac30CC4bD2d56b67b05",
+      L1CrossDomainMessenger: "0x635ba609680c55C3bDd0B3627b4c5dB21b13c310",
+      L1StandardBridge: "0x3B95bC951EE0f553ba487327278cAc44f29715E5",
+      OptimismPortal: "0x9168765EE952de7C6f8fC6FaD5Ec209B960b7622",
+      L2OutputOracle: "0x30c789674ad3B458886BBC9abf42EEe19EA05C1D"
+   }
    ```
 
 #### Deposit (from Goerli to OP Goerli, or Ethereum or OP Mainnet)
@@ -136,7 +163,7 @@ Once you do that, you can use the SDK normally.
    The L2 address is necessary to know which bridge is responsible and needs the allowance.
 
    ```js
-   depositTx1 = await crossChainMessenger.approveERC20(l1Contract.address, l2Addr, 1e9)
+   depositTx1 = await messenger.approveERC20(l1Contract.address, l2Addr, 1e9)
    await depositTx1.wait()
    ```
 
@@ -150,52 +177,17 @@ Once you do that, you can use the SDK normally.
 1. Do the actual deposit
 
    ```js
-   depositTx2 = await crossChainMessenger.depositERC20(l1Contract.address, l2Addr, 1e9)
+   depositTx2 = await messenger.depositERC20(l1Contract.address, l2Addr, 1e9)
    await depositTx2.wait()
    ```
 
 1. Wait for the deposit to be relayed.
 
    ```js
-   await crossChainMessenger.waitForMessageStatus(depositTx2.hash, optimismSDK.MessageStatus.RELAYED)
+   await messenger.waitForMessageStatus(depositTx2.hash, sdk.MessageStatus.RELAYED)
    ```
 
 1. Check your balances on L1 and L2.
-
-   ```js
-   await l1Contract.balanceOf(l1Wallet.address) 
-   await l2CustomERC20.balanceOf(l1Wallet.address)
-   ```
-
-#### Withdrawal (from OP Mainnet to Ethereum, or OP Goerli to Goerli)
-
-1. Initiate the withdrawal on L2
-
-   ```js
-   withdrawalTx1 = await crossChainMessenger.withdrawERC20(l1Contract.address, l2Addr, 1e9)
-   await withdrawalTx1.wait()
-   ```
-
-1. Wait until the root state is published on L1, and then prove the withdrawal.
-   This is likely to take less than 240 seconds.
-
-   ```js
-   await crossChainMessenger.waitForMessageStatus(withdrawalTx1.hash, optimismSDK.MessageStatus.READY_TO_PROVE)
-   withdrawalTx2 = await crossChainMessenger.proveMessage(withdrawalTx1.hash)
-   await withdrawalTx2.wait()
-   ```
-
-1. Wait the fault challenge period (a short period on Goerli, seven days on the production network) and then finish the withdrawal.
-
-   ```js
-   await crossChainMessenger.waitForMessageStatus(withdrawalTx1.hash, optimismSDK.MessageStatus.READY_FOR_RELAY)
-   withdrawalTx3 = await crossChainMessenger.finalizeMessage(withdrawalTx1.hash)
-   await withdrawalTx3.wait()   
-   ```
-
-
-1. Check your balances on L1 and L2.
-   The balance on L2 should be back to zero.
 
    ```js
    await l1Contract.balanceOf(l1Wallet.address) 
