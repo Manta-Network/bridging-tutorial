@@ -2,7 +2,7 @@
  *Submitted for verification at Etherscan.io on 2022-08-19
 */
 
-pragma solidity 0.8.13;
+pragma solidity 0.8.15;
 // SPDX-License-Identifier: Unlicense
 
 // An ERC-20 token for testing purposes
