@@ -31,6 +31,10 @@ if (!tokenInfo) {
   console.error('Invalid Token: "process.env.DEPLOY_TOKEN_NAME"');
   return;
 }
+if (tokenInfo.l2TokenAddress) {
+  console.error(`Already Deployed: ${tokenInfo.l2TokenAddress}`);
+  return;
+}
 
 main(tokenInfo).catch((error) => {
   console.error(error);
