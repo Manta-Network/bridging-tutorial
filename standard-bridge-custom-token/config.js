@@ -7,6 +7,7 @@ const TOKENS = {
     decimals: 18,
     l1TokenAddress: "0x32B3b2281717dA83463414af4E8CfB1970E56287",
     l2TokenAddress: "0xA2B0b1DF7FbD966560A302E9E2cFB9d0f115FfD6",
+    isTestnet: true,
   },
   MATIC: {
     name: "Matic Token",
@@ -34,7 +35,7 @@ const TOKENS = {
     symbol: "TRB",
     decimals: 18,
     l1TokenAddress: "0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0",
-    l2TokenAddress: "",
+    l2TokenAddress: "0x8D7090DdDa057f48FdBbb2ABCeA22D1113AB566a",
   },
 };
 
