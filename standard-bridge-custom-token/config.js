@@ -37,6 +37,13 @@ const TOKENS = {
     l1TokenAddress: "0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0",
     l2TokenAddress: "0x8D7090DdDa057f48FdBbb2ABCeA22D1113AB566a",
   },
+  wUSDM: {
+    name: "Wrapped Mountain Protocol USD",
+    symbol: "wUSDM",
+    decimals: 18,
+    l1TokenAddress: "0x57F5E098CaD7A3D1Eed53991D4d66C45C9AF7812",
+    l2TokenAddress: "0x0917459e8CA2C01E49b1A83Ae8ACC6bd6f627442",
+  },
 };
 
 module.exports = {

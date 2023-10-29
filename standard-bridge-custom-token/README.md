@@ -1,3 +1,23 @@
+# Deploy token steps
+
+```shell
+# step 1:
+cd ./standard-bridge-custom-token
+
+# step 2:
+# add new token in config.js, no need to input l2TokenAddress
+# update .env file, change the name to the newly added token name
+
+# step 3:
+npx hardhat run scripts/deploy.js --network manta-mainnet
+
+# step 4:
+# configure the l2TokenAddress address in the console into config
+
+# step 5:
+# commit & push
+```
+
 # Bridging your Custom ERC20 token using the Standard Bridge
 
 
