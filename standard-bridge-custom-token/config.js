@@ -44,6 +44,13 @@ const TOKENS = {
     l1TokenAddress: "0x57F5E098CaD7A3D1Eed53991D4d66C45C9AF7812",
     l2TokenAddress: "0x0917459e8CA2C01E49b1A83Ae8ACC6bd6f627442",
   },
+  QUICK: {
+    name: "QuickSwap",
+    symbol: "QUICK",
+    decimals: 18,
+    l1TokenAddress: "0xd2ba23de8a19316a638dc1e7a9adda1d74233368",
+    l2TokenAddress: "0xE22E3D44Ea9Fb0A87Ea3F7a8f41D869C677f0020",
+  },
 };
 
 module.exports = {
