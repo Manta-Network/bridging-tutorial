@@ -51,6 +51,13 @@ const TOKENS = {
     l1TokenAddress: "0xd2ba23de8a19316a638dc1e7a9adda1d74233368",
     l2TokenAddress: "0xE22E3D44Ea9Fb0A87Ea3F7a8f41D869C677f0020",
   },
+  MaticX: {
+    name: "Liquid Staking Matic",
+    symbol: "MaticX",
+    decimals: 18,
+    l1TokenAddress: "0xf03A7Eb46d01d9EcAA104558C732Cf82f6B6B645",
+    l2TokenAddress: "0x01D27580C464d5B3B26F78Bee12E684901dbC02a",
+  },
 };
 
 module.exports = {
