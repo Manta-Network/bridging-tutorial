@@ -58,6 +58,13 @@ const TOKENS = {
     l1TokenAddress: "0xf03A7Eb46d01d9EcAA104558C732Cf82f6B6B645",
     l2TokenAddress: "0x01D27580C464d5B3B26F78Bee12E684901dbC02a",
   },
+  PYTH: {
+    name: "Pyth Network",
+    symbol: "PYTH",
+    decimals: 6,
+    l1TokenAddress: "0xeFc0CED4B3D536103e76a1c4c74F0385C8F4Bdd3",
+    l2TokenAddress: "0x90E95735378A31BfAD2Dcd87128Fbb80FFeB6917",
+  },
 };
 
 module.exports = {
