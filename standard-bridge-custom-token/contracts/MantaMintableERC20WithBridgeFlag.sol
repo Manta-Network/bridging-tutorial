@@ -40,7 +40,7 @@ contract MantaMintableERC20WithBridgeFlag is OptimismMintableERC20 {
     }
 
     function burn(address _from, uint256 _amount) external override onlyBridge {
-        require(!bridgePaused, "MantaMintableERC20: bridge paused");
+        require(!bridgePaused, "MantaMintableERC20WithBridgeFlag: bridge paused");
 
         _burn(_from, _amount);
         emit Burn(_from, _amount);
