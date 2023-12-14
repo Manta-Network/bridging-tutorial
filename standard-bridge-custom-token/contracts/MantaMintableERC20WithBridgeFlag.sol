@@ -20,6 +20,7 @@ contract MantaMintableERC20 is OptimismMintableERC20 {
         uint8 _decimals
     ) OptimismMintableERC20(_bridge, _remoteToken, _name, _symbol, _decimals) {
         admin = msg.sender;
+        bridgePaused=true;
     }
 
     function setAdmin(address _newAdmin) external onlyAdmin {
@@ -38,8 +39,10 @@ contract MantaMintableERC20 is OptimismMintableERC20 {
         bridgePaused = false;
     }
 
-    function burn(address _from, uint256 _amount) external override {
+    function burn(address _from, uint256 _amount) external override onlyBridge {
         require(!bridgePaused, "MantaMintableERC20: bridge paused");
-        super.burn(_from, _amount);
+
+        _burn(_from, _amount);
+        emit Burn(_from, _amount);
     }
 }
