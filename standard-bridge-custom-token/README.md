@@ -11,6 +11,9 @@ cd ./standard-bridge-custom-token
 # step 3:
 npx hardhat run scripts/deploy.js --network manta-mainnet
 
+# or
+npx hardhat run scripts/deployBridgeFlagToken.js --network manta-mainnet
+
 # step 4:
 # configure the l2TokenAddress address in the console into config
 

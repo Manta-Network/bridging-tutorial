@@ -3,12 +3,12 @@ pragma solidity 0.8.15;
 
 import {OptimismMintableERC20} from "@eth-optimism/contracts-bedrock/src/universal/OptimismMintableERC20.sol";
 
-contract MantaMintableERC20 is OptimismMintableERC20 {
+contract MantaMintableERC20WithBridgeFlag is OptimismMintableERC20 {
     address public admin;
     bool public bridgePaused;
 
     modifier onlyAdmin() {
-        require(admin == msg.sender, "MantaMintableERC20: Only Admin");
+        require(admin == msg.sender, "MantaMintableERC20WithBridgeFlag: Only Admin");
         _;
     }
 
@@ -25,7 +25,7 @@ contract MantaMintableERC20 is OptimismMintableERC20 {
     function setAdmin(address _newAdmin) external onlyAdmin {
         require(
             _newAdmin != address(0),
-            "MantaMintableERC20: invalid new admin"
+            "MantaMintableERC20WithBridgeFlag: invalid new admin"
         );
         admin = _newAdmin;
     }
@@ -39,7 +39,7 @@ contract MantaMintableERC20 is OptimismMintableERC20 {
     }
 
     function burn(address _from, uint256 _amount) external override {
-        require(!bridgePaused, "MantaMintableERC20: bridge paused");
+        require(!bridgePaused, "MantaMintableERC20WithBridgeFlag: bridge paused");
         super.burn(_from, _amount);
     }
 }
