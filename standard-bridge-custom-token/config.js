@@ -65,6 +65,13 @@ const TOKENS = {
     l1TokenAddress: "0xeFc0CED4B3D536103e76a1c4c74F0385C8F4Bdd3",
     l2TokenAddress: "0x90E95735378A31BfAD2Dcd87128Fbb80FFeB6917",
   },
+  BEL: {
+    name: "Bella",
+    symbol: "BEL",
+    decimals: 18,
+    l1TokenAddress: "0xa91ac63d040deb1b7a5e4d4134ad23eb0ba07e14",
+    l2TokenAddress: "0xB385E52903C802B3bDca7C4D0C78460A8988E1ce",
+  },
 };
 
 module.exports = {
