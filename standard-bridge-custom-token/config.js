@@ -72,6 +72,13 @@ const TOKENS = {
     l1TokenAddress: "0xa91ac63d040deb1b7a5e4d4134ad23eb0ba07e14",
     l2TokenAddress: "0xB385E52903C802B3bDca7C4D0C78460A8988E1ce",
   },
+  rsETH: {
+    name: "rsETH",
+    symbol: "rsETH",
+    decimals: 18,
+    l1TokenAddress: "0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7",
+    l2TokenAddress: "0x9758962A46ffbE3Ae02Dc5a850b0e5A3A985EAdD",
+  },
 };
 
 module.exports = {
