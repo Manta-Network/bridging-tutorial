@@ -79,6 +79,13 @@ const TOKENS = {
     l1TokenAddress: "0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7",
     l2TokenAddress: "0x9758962A46ffbE3Ae02Dc5a850b0e5A3A985EAdD",
   },
+  ISP: {
+    name: "Ispolink Token",
+    symbol: "ISP",
+    decimals: 18,
+    l1TokenAddress: "0xC8807f0f5BA3fa45FfBdc66928d71c5289249014",
+    l2TokenAddress: "0xBAb1c57ec0bB0aE81d948503E51d90166459D154",
+  },
 };
 
 module.exports = {
