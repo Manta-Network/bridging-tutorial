@@ -17,6 +17,12 @@ module.exports = {
     },
   },
   networks: {
+    goerli: {
+      // Ankr's Public RPC URL
+      url: "https://rpc.ankr.com/eth_goerli",
+      // PRIVATE_KEY loaded from .env file
+      accounts: [process.env.PRIVATE_KEY],
+    },
     "optimism-goerli": {
       chainId: 420,
       url: `https://opt-goerli.g.alchemy.com/v2/${process.env.L2_ALCHEMY_KEY}`,
@@ -39,7 +45,11 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: { "manta-testnet": "test", "manta-mainnet": "test" },
+    apiKey: {
+      "manta-testnet": "test",
+      "manta-mainnet": "test",
+      goerli: process.env.ETHER_SCAN_API_KEY,
+    },
     customChains: [
       {
         network: "manta-testnet",

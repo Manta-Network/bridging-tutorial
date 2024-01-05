@@ -9,6 +9,14 @@ const TOKENS = {
     l2TokenAddress: "0xA2B0b1DF7FbD966560A302E9E2cFB9d0f115FfD6",
     isTestnet: true,
   },
+  TestTT: {
+    name: "TestToken",
+    symbol: "TT",
+    decimals: 18,
+    l1TokenAddress: "0x8D7090DdDa057f48FdBbb2ABCeA22D1113AB566a",
+    l2TokenAddress: "0x8D7090DdDa057f48FdBbb2ABCeA22D1113AB566a",
+    isTestnet: true,
+  },
   MATIC: {
     name: "Matic Token",
     symbol: "MATIC",
