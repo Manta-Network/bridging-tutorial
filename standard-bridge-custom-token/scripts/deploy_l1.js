@@ -7,8 +7,10 @@ async function main(token) {
   const l2CustomERC20Factory = await ethers.getContractFactory(
     "MantaMintableERC20"
   );
+  // l1StandardBridge (goerli): 0x4638aC6b5727a8b9586D3eba5B44Be4b74ED41Fc
+  // l1StandardBridge (ethereum mainnet): 0x3B95bC951EE0f553ba487327278cAc44f29715E5
   const args = [
-    "0x4638aC6b5727a8b9586D3eba5B44Be4b74ED41Fc",
+    "0x3B95bC951EE0f553ba487327278cAc44f29715E5",
     token.l2TokenAddress,
     token.name,
     token.symbol,

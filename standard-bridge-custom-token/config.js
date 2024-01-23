@@ -9,13 +9,20 @@ const TOKENS = {
     l2TokenAddress: "0xA2B0b1DF7FbD966560A302E9E2cFB9d0f115FfD6",
     isTestnet: true,
   },
-  TestTT: {
-    name: "TestToken",
-    symbol: "TT",
+  TestManta: {
+    name: "Manta Token",
+    symbol: "MANTA",
     decimals: 18,
-    l1TokenAddress: "0x8D7090DdDa057f48FdBbb2ABCeA22D1113AB566a",
-    l2TokenAddress: "0x8D7090DdDa057f48FdBbb2ABCeA22D1113AB566a",
+    l1TokenAddress: "0x9758962A46ffbE3Ae02Dc5a850b0e5A3A985EAdD",
+    l2TokenAddress: "0x7c75A32F38D493802254e9C7356621e20668c762",
     isTestnet: true,
+  },
+  MANTA: {
+    name: "Manta",
+    symbol: "MANTA",
+    decimals: 18,
+    l1TokenAddress: "",
+    l2TokenAddress: "0x95CeF13441Be50d20cA4558CC0a27B601aC544E5",
   },
   MATIC: {
     name: "Matic Token",
