@@ -23,6 +23,12 @@ module.exports = {
       // PRIVATE_KEY loaded from .env file
       accounts: [process.env.PRIVATE_KEY],
     },
+    mainnet: {
+      // Ankr's Public RPC URL
+      url: "https://eth.drpc.org",
+      // PRIVATE_KEY loaded from .env file
+      accounts: [process.env.PRIVATE_KEY],
+    },
     "optimism-goerli": {
       chainId: 420,
       url: `https://opt-goerli.g.alchemy.com/v2/${process.env.L2_ALCHEMY_KEY}`,
@@ -49,6 +55,7 @@ module.exports = {
       "manta-testnet": "test",
       "manta-mainnet": "test",
       goerli: process.env.ETHER_SCAN_API_KEY,
+      mainnet: process.env.ETHER_SCAN_API_KEY,
     },
     customChains: [
       {
@@ -65,6 +72,14 @@ module.exports = {
         urls: {
           apiURL: "https://manta-pacific.calderaexplorer.xyz/api",
           browserURL: "https://manta-pacific.calderaexplorer.xyz",
+        },
+      },
+      {
+        network: "mainnet",
+        chainId: 1,
+        urls: {
+          apiURL: "https://api.etherscan.io/api",
+          browserURL: "https://etherscan.io",
         },
       },
     ],

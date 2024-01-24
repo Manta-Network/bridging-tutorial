@@ -21,7 +21,7 @@ const TOKENS = {
     name: "Manta",
     symbol: "MANTA",
     decimals: 18,
-    l1TokenAddress: "",
+    l1TokenAddress: "0x95CeF13441Be50d20cA4558CC0a27B601aC544E5",
     l2TokenAddress: "0x95CeF13441Be50d20cA4558CC0a27B601aC544E5",
   },
   MATIC: {
