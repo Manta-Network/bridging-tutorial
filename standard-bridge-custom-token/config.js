@@ -101,6 +101,13 @@ const TOKENS = {
     l1TokenAddress: "0xC8807f0f5BA3fa45FfBdc66928d71c5289249014",
     l2TokenAddress: "0xBAb1c57ec0bB0aE81d948503E51d90166459D154",
   },
+  DERI: {
+    name: "Deri",
+    symbol: "DERI",
+    decimals: 18,
+    l1TokenAddress: "0xA487bF43cF3b10dffc97A9A744cbB7036965d3b9",
+    l2TokenAddress: "0xd212377f71F15A1b962c9265Dc44FBcEAf0Bc46D",
+  },
 };
 
 module.exports = {
