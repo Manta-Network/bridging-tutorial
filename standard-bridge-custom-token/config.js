@@ -114,6 +114,13 @@ const TOKENS = {
     decimals: 18,
     l1TokenAddress: "0xD9A442856C234a39a81a089C06451EBAa4306a72",
     l2TokenAddress: "0x6025F893F192cCF4073665Fc288Ae5256e06cFb0",
+  },
+  ezETH: {
+    name: "Renzo Restaked ETH",
+    symbol: "ezETH",
+    decimals: 18,
+    l1TokenAddress: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
+    l2TokenAddress: "0xab8653fe4EaAb3BcBaB35Ea84eCD600d5efa5605",
   }
 };
 
