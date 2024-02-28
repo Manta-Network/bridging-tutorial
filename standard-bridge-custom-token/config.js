@@ -108,6 +108,13 @@ const TOKENS = {
     l1TokenAddress: "0xA487bF43cF3b10dffc97A9A744cbB7036965d3b9",
     l2TokenAddress: "0xd212377f71F15A1b962c9265Dc44FBcEAf0Bc46D",
   },
+  pufETH: {
+    name: "pufETH",
+    symbol: "pufETH",
+    decimals: 18,
+    l1TokenAddress: "0xD9A442856C234a39a81a089C06451EBAa4306a72",
+    l2TokenAddress: "0x6025F893F192cCF4073665Fc288Ae5256e06cFb0",
+  }
 };
 
 module.exports = {
