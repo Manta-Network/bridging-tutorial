@@ -128,7 +128,7 @@ const TOKENS = {
     symbol: "pufETH",
     decimals: 18,
     l1TokenAddress: "0xD9A442856C234a39a81a089C06451EBAa4306a72",
-    l2TokenAddress: "",
+    l2TokenAddress: "0xA53E005Cecd3D7C89A4AE814617cC14828b6527E",
   },
 };
 
