@@ -9,6 +9,14 @@ const TOKENS = {
     l2TokenAddress: "0xA2B0b1DF7FbD966560A302E9E2cFB9d0f115FfD6",
     isTestnet: true,
   },
+  TestUSDT: {
+    name: "Manta Tether USD",
+    symbol: "maUSDT",
+    decimals: 6,
+    l1TokenAddress: "0xf4b2cbc3ba04c478f0dc824f4806ac39982dce73",
+    l2TokenAddress: "",
+    isTestnet: true,
+  },
   TestManta: {
     name: "Manta Token",
     symbol: "MANTA",
