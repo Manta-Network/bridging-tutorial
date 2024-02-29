@@ -10,6 +10,8 @@ cd ./standard-bridge-custom-token
 
 # step 3:
 npx hardhat run scripts/deploy.js --network manta-mainnet
+# or
+npx hardhat run scripts/deploy_l1.js --network mainnet
 
 # or
 npx hardhat run scripts/deployBridgeFlagToken.js --network manta-mainnet
