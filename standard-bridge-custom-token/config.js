@@ -130,6 +130,27 @@ const TOKENS = {
     l1TokenAddress: "0xD9A442856C234a39a81a089C06451EBAa4306a72",
     l2TokenAddress: "0xA53E005Cecd3D7C89A4AE814617cC14828b6527E",
   },
+  weETH: {
+    name: "Wrapped eETH",
+    symbol: "weETH",
+    decimals: 18,
+    l1TokenAddress: "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+    l2TokenAddress: "",
+  },
+  USDe: {
+    name: "USDe",
+    symbol: "USDe",
+    decimals: 18,
+    l1TokenAddress: "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+    l2TokenAddress: "",
+  },
+  sUSDe: {
+    name: "Staked USDe",
+    symbol: "sUSDe",
+    decimals: 18,
+    l1TokenAddress: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+    l2TokenAddress: "",
+  },
 };
 
 module.exports = {
