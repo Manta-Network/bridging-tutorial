@@ -135,21 +135,21 @@ const TOKENS = {
     symbol: "weETH",
     decimals: 18,
     l1TokenAddress: "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
-    l2TokenAddress: "",
+    l2TokenAddress: "0x77b6F99970f488cFA8bd41892900b6Ce881C2300",
   },
   USDe: {
     name: "USDe",
     symbol: "USDe",
     decimals: 18,
     l1TokenAddress: "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
-    l2TokenAddress: "",
+    l2TokenAddress: "0xc8D4bCB4845f4583fD70a3ed22ed6623eF45b986",
   },
   sUSDe: {
     name: "Staked USDe",
     symbol: "sUSDe",
     decimals: 18,
     l1TokenAddress: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
-    l2TokenAddress: "",
+    l2TokenAddress: "0x9bf486550523faf9902a8be78ABB436d287a2c6C",
   },
 };
 
