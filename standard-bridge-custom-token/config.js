@@ -156,7 +156,7 @@ const TOKENS = {
     symbol: "uniETH",
     decimals: 18,
     l1TokenAddress: "0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4",
-    l2TokenAddress: "",
+    l2TokenAddress: "0x34c7Ad65E4163306f8745996688b476914201cE0",
   },
 };
 
