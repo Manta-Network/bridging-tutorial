@@ -151,6 +151,13 @@ const TOKENS = {
     l1TokenAddress: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     l2TokenAddress: "0x9bf486550523faf9902a8be78ABB436d287a2c6C",
   },
+  uniETH: {
+    name: "Universal ETH",
+    symbol: "uniETH",
+    decimals: 18,
+    l1TokenAddress: "0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4",
+    l2TokenAddress: "",
+  },
 };
 
 module.exports = {
