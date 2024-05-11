@@ -158,6 +158,13 @@ const TOKENS = {
     l1TokenAddress: "0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4",
     l2TokenAddress: "0x34c7Ad65E4163306f8745996688b476914201cE0",
   },
+  UNI: {
+    name: "Uniswap",
+    symbol: "UNI",
+    decimals: 18,
+    l1TokenAddress: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+    l2TokenAddress: "0x4220E94F507Dc9E14169CFa0f2912463AcE8c8FF",
+  },
 };
 
 module.exports = {
