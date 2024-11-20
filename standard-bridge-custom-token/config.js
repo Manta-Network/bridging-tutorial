@@ -165,6 +165,13 @@ const TOKENS = {
     l1TokenAddress: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
     l2TokenAddress: "0x4220E94F507Dc9E14169CFa0f2912463AcE8c8FF",
   },
+  SolvBTC: {
+    name: "Solv BTC",
+    symbol: "SolvBTC",
+    decimals: 18,
+    l1TokenAddress: "0x7a56e1c57c7475ccf742a1832b028f0456652f97",
+    l2TokenAddress: "0x207D76b287a566aBa975700f103017FD568a2181",
+  },
 };
 
 module.exports = {
