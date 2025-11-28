@@ -172,6 +172,13 @@ const TOKENS = {
     l1TokenAddress: "0x7a56e1c57c7475ccf742a1832b028f0456652f97",
     l2TokenAddress: "0x207D76b287a566aBa975700f103017FD568a2181",
   },
+  vMANTA: {
+    name: "Bifrost Voucher MANTA",
+    symbol: "vMANTA",
+    decimals: 18,
+    l1TokenAddress: "0xf0b9889CDB70a716Bf72e37Ef626F08d9F14c180",
+    l2TokenAddress: "0xB01E11B28a88dED4e5F467364455a757A47c5aa9",
+  },
 };
 
 module.exports = {
